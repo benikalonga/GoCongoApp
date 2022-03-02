@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <com.epsilonpros.gocongomagasin.views.RecyclerViewBK
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recylerStock"
+        app:recycler_emptyview="@id/emptyView"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/emptyView"
+        android:alpha="1"
+        >
+        <net.qiujuer.genius.ui.widget.Loading
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading"
+            android:visibility="invisible"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:gProgressStyle="line"
+            app:gAutoRun="false"
+            app:gForegroundColor="@color/colorPrimary"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_empty"
+                android:layout_margin="@dimen/len_4"
+                />
+            <com.epsilonpros.gocongomagasin.views.TextViewTeach
+                android:id="@+id/tvEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aucune commande trouvée"
+                android:textColor="@color/colorListeVide"
+                android:textSize="@dimen/font_16"
+                app:police="roboto_light"
+                />
+            <com.epsilonpros.gocongomagasin.views.FancyButtonBK
+                android:id="@+id/fcyActualiser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/len_20"
+                android:enabled="false"
+                app:fb_textColor="@color/black"
+                app:fb_textSize="@dimen/font_14"
+                app:fb_defaultColor="@color/trans"
+                app:fb_focusColor="@color/grey_500"
+                app:fb_text="ACTUALISER"
+                app:fb_borderWidth="@dimen/len_1"
+                app:fb_borderColor="@color/grey_300"
+                app:fb_radius="@dimen/len_16"
+                app:fb_iconResource="@drawable/ic_rafraichir"
+                app:fb_iconPaddingLeft="@dimen/len_0"
+                android:padding="@dimen/len_4"
+
+                />
+        </LinearLayout>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
